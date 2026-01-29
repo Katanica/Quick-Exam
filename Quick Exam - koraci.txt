@@ -1,0 +1,203 @@
+EPIC 0: Setup i plan
+
+Kreirati novi Android Studio projekt (Kotlin)
+
+Odabrati UI tehnologiju (Compose ili XML) i postaviti osnovni theme
+
+Dodati dependencies: Coroutines, Lifecycle ViewModel, Navigation
+
+Postaviti osnovnu navigaciju (Home -> Lista setova)
+
+Definirati data modele i flow aplikacije
+
+EPIC 1: Lokalna baza (Room) + slojevi
+1.1 Entity modeli
+
+Napraviti QuizSetEntity
+
+Napraviti QuestionEntity
+
+Napraviti AnswerOptionEntity
+
+Napraviti AttemptEntity
+
+Napraviti AttemptAnswerEntity
+
+1.2 DAO sloj
+
+QuizSetDao: insert/update/delete/getAll/getById
+
+QuestionDao: insert/update/delete/getBySetId
+
+AnswerOptionDao: insert/update/delete/getByQuestionId
+
+AttemptDao: insert + getBySetId + getById
+
+AttemptAnswerDao: insertAll + getByAttemptId
+
+1.3 Room Database + DI
+
+Napraviti AppDatabase (RoomDatabase)
+
+Napraviti provider (singleton) za bazu
+
+Napraviti Repository sloj koji koristi DAO-e
+
+1.4 Test baze
+
+Insert set -> read set -> prikaz u logu/UI
+
+EPIC 2: CRUD UI za setove
+
+Lista setova ekran
+
+Kreiraj set ekran (title, description)
+
+Uredi set ekran
+
+Brisanje seta (confirm dialog)
+
+Validacija: title ne smije biti prazan
+
+Empty state poruka
+
+EPIC 3: CRUD UI za pitanja i odgovore
+3.1 Pitanja u setu
+
+Detalji seta ekran (info + lista pitanja)
+
+Dodaj pitanje (text + type)
+
+Uredi pitanje
+
+Brisanje pitanja
+
+3.2 Odgovori SINGLE/MULTI
+
+Dodavanje AnswerOption
+
+Označavanje isCorrect (radio/checkbox)
+
+Validacije:
+SINGLE = 1 točan
+MULTI = min 1 točan
+min 2 opcije
+
+3.3 TEXT/self-grade
+
+Unos correctText
+
+Opcionalno explanation
+
+EPIC 4: Quiz engine (Ispitni mod)
+4.1 Data loading i priprema
+
+QuizSession model (state, index, score, startTime)
+
+Učitati pitanja + opcije
+
+Shuffle pitanja
+
+Shuffle opcija
+
+4.2 Quiz UI
+
+Postavke ispita ekran
+
+SINGLE pitanje ekran
+
+MULTI pitanje ekran
+
+TEXT pitanje ekran
+
+Next navigacija + indikator pitanja
+
+4.3 Ocjenjivanje
+
+SINGLE provjera
+
+MULTI provjera
+
+TEXT self-grade
+
+Ažurirati score
+
+4.4 Kraj ispita
+
+Izračun rezultata
+
+Result summary ekran
+
+Prikaz po pitanjima
+
+EPIC 5: Spremanje pokušaja + Povijest
+5.1 Save Attempt
+
+Kreirati AttemptEntity
+
+Spremiti Attempt
+
+Spremiti AttemptAnswer listu
+
+5.2 History UI
+
+Povijest pokušaja ekran
+
+Detalji pokušaja ekran
+
+Sortiranje po datumu
+
+EPIC 6: Dijeljenje setova (Firebase)
+6.1 Firebase setup
+
+Dodati Firebase u projekt
+
+Uključiti Auth + Firestore
+
+Anonymous login
+
+6.2 Upload (Share)
+
+Export seta iz Room
+
+Spremiti u Firestore
+
+Generirati shareCode
+
+Prikaz shareCode + Copy
+
+6.3 Import
+
+Unos shareCode
+
+Dohvat iz Firestore
+
+Spremiti u Room
+
+Provjera duplikata
+
+EPIC 7: Završno poliranje
+
+Loading states
+
+Error handling
+
+Confirm dialogs
+
+Edge cases
+
+Refactor koda
+
+Demo set za prezentaciju
+
+EPIC 8: Bonus
+
+Pretraga i filter setova
+
+Statistika po pitanju
+
+Timer mod
+
+JSON export/import
+
+Google login
