@@ -9,10 +9,14 @@ import androidx.room.Update
 @Dao
 interface AttemptAnswerDao{
     @Insert
-    suspend fun insert(set: AttemptAnswerDao)
+    suspend fun insert(set: AttemptAnswerEntity)
 
     @Query("SELECT * FROM AttemptAnswerEntity")
     suspend fun getAll(): List<AttemptAnswerEntity>
+
+    @Query("SELECT * FROM AttemptAnswerEntity WHERE attemptAnswerId = :id")
+    suspend fun getById(id : Int): AttemptAnswerEntity?
+
 
     @Delete
     suspend fun delete(set: AttemptAnswerEntity)
