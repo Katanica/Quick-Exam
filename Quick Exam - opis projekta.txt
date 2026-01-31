@@ -1,0 +1,13 @@
+Korisnik u aplikaciji prvo napravi set pitanja i da mu naziv. U taj set dodaje pitanja. Svako pitanje može imati ponuđene odgovore gdje označi koji su točni, ili može biti tekstualno pitanje gdje upiše točan odgovor za provjeru.
+
+Svi ti podaci se spremaju u lokalnu bazu na telefonu. Kada otvori aplikaciju, korisnik vidi listu svojih setova i može ih uređivati ili brisati.
+
+Kada želi učiti, korisnik pokrene ispit za jedan set. Aplikacija učita pitanja iz baze, promiješa njihov redoslijed i po potrebi promiješa ponuđene odgovore. Pitanja se prikazuju jedno po jedno. Korisnik odgovara klikom na odgovore ili unosom teksta.
+
+Aplikacija provjerava je li odgovor točan. Kod tekstualnih pitanja pokaže točan odgovor pa korisnik sam označi je li pogodio. Aplikacija broji bodove tokom ispita.
+
+Na kraju ispita prikaže se rezultat i pregled što je bilo točno ili netočno. Taj pokušaj se spremi u bazu kao jedan zapis s rezultatom i svim odgovorima.
+
+Korisnik kasnije može otvoriti povijest pokušaja i vidjeti kako je rješavao prije. Tako može pratiti napredak.
+
+Ako je uključeno dijeljenje, korisnik može poslati svoj set u online bazu i dobiti kod. Drugi korisnik unese taj kod i preuzme isti set u svoju aplikaciju. Aplikacija tako služi za samostalno učenje i brzo ponavljanje gradiva.
